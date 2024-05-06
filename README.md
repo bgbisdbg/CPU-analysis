@@ -7,12 +7,13 @@
 2. открыть командную консоль и в корневой дириктории введите команду
  
 ```
-	docker build -t test_app .
+docker build -t test_app .
 
 ```
 
 3. после того как образ будет собран нужно ввести команду 
 	
 ```
- docker run -p 8001:8001 --name app_container test_app
+docker run -p 8001:8001 --name app_container test_app
+
 ```
