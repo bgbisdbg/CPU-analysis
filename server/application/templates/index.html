@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CPU Usage</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div id="cpu-usage">Loading...</div>
+
+    <script>
+        function updateCpuUsage() {
+            $.getJSON("http://localhost:8001/cpu_usage/", function(data) {
+                var usage = data.usage;
+                $("#cpu-usage").text("CPU Usage: " + usage + "%");
+            });
+        }
+
+        // Update CPU usage every 10 seconds
+        setInterval(updateCpuUsage, 10000);
+
+        // Initial update
+        updateCpuUsage();
+    </script>
+</body>
+</html>
